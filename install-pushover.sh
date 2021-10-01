@@ -9,8 +9,8 @@ fi
 touch /usr/bin/pushover
 chmod +x /usr/bin/pushover
 
-echo "! /bin/bash" >> /usr/bin/pushover
-echo "Pushover script by RamboRigs" >> /usr/bin/pushover
+echo "#! /bin/bash" >> /usr/bin/pushover
+echo "#Pushover script by RamboRigs" >> /usr/bin/pushover
 echo "MESSAGE=\$1" >> /usr/bin/pushover
 echo "TITLE=\$2" >> /usr/bin/pushover
 echo "SOUND=\$3" >> /usr/bin/pushover
@@ -42,7 +42,7 @@ echo "	  APP_URL=\$DEFAULT_URL" >> /usr/bin/pushover
 echo "	  APP_TOKEN=\$DEFAULT_APP" >> /usr/bin/pushover
 echo "fi" >> /usr/bin/pushover
 echo "if [ \$# -lt 5 ]; then" >> /usr/bin/pushover
-echo "	  APP_TOKEN=$DEFAULT_APP" >> /usr/bin/pushover
+echo "	  APP_TOKEN=\$DEFAULT_APP" >> /usr/bin/pushover
 echo "fi" >> /usr/bin/pushover
 echo "" >> /usr/bin/pushover
 echo "wget https://api.pushover.net/1/messages.json --post-data=\"token=\$APP_TOKEN&user=\$USER_TOKEN&message=\$MESSAGE&title=\$TITLE&sound=\$SOUND&url=\$APP_URL\" -qO- > /dev/null 2>&1 &" >> /usr/bin/pushover
