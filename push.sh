@@ -25,11 +25,11 @@ if [ $# -lt 3 ]; then
 	APP_URL=$DEFAULT_URL
 	APP_TOKEN=$DEFAULT_APP
 fi
-if [ $# -lt 4]; then
+if [ $# -lt 4 ]; then
 	APP_URL=$DEFAULT_URL
 	APP_TOKEN=$DEFAULT_APP
 fi
-if [ $# -lt 5]; then
+if [ $# -lt 5 ]; then
 	APP_TOKEN=$DEFAULT_APP
 fi
 

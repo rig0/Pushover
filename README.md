@@ -8,9 +8,7 @@ This is a bash script that will allow you to send a [Pushover](http://pushover.n
 
 Just put the script somewhere, and call it this way:
 
-	> ./pushover <message> [title]
+	> ./pushover message title* sound* url* appkey*
 
-So, for example:
+	* = optional
 
-	> ./pushover "This is a test message from my Raspberry Pi."
-	> ./pushover "This is another message." "Wow, dude, nice title"
