@@ -21,5 +21,5 @@ If you're going to add an optional argument, all those before it must be provide
 
 Example:
 
-    > pushover "Download complete." "Deluge" " " " " APP_TOKEN_HERE
+    > pushover "Download complete." "Deluge" custom_sound " " APP_TOKEN_HERE
 
