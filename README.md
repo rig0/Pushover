@@ -12,3 +12,8 @@ Just put the script somewhere, and call it this way:
 
 	* = optional
 
+	> ./pushover "This is a test message from my Raspberry Pi."
+	> ./pushover "This is another message." "Wow, dude, nice title"
+	
+### Some optional parameters may be included:
+[Pushover API Documentation](https://pushover.net/api)
