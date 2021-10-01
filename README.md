@@ -19,7 +19,7 @@ Examples:
     
 If you're going to add an optional argument, all those before it must be provided. Adding a space in quotes will do (" ")
 
-Ex:
+Example:
 
     > pushover "Download complete." "Deluge" " " " " APP_TOKEN_HERE
 
