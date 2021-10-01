@@ -4,11 +4,11 @@ Bash script for pushover notifications.
 
 ## Usage
 
-Use the `install-pushover.sh` for a clean installation. Enter the default values below. (* = Optional):
+Use `install-pushover.sh` for a clean installation. Enter the default values below. (* = Optional):
 
 	> ./install-pushover.sh "apptitle" userkey appkey sound* url*
 
-Now you can can call `pushover` from anywhere. (* = Optional overides defaults)
+Now you can can call `pushover` from anywhere. (* = Optional arguments that override defaults)
 
 	> pushover "message" "title"* sound* url* apptoken*
 Ex:
