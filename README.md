@@ -1,19 +1,23 @@
 # Pushover
 
-Bash script for pushover notifications
-
-This is a bash script that will allow you to send a [Pushover](http://pushover.net) message very easily from a script or terminal.
+Bash script for pushover notifications.
 
 ## Usage
 
-Just put the script somewhere, and call it this way:
+Use the `install-pushover.sh` for a clean installation. Enter the default values below. (* = Optional):
 
-	> ./pushover message title* sound* url* appkey*
+	> ./install-pushover.sh "apptitle" userkey appkey sound* url*
 
-	* = optional
+Now you can can call `pushover` from anywhere. (* = Optional overides defaults)
 
-	> ./pushover "This is a test message from my Raspberry Pi."
-	> ./pushover "This is another message." "Wow, dude, nice title"
-	
-### Some optional parameters may be included:
-[Pushover API Documentation](https://pushover.net/api)
+	> pushover "message" "title"* sound* url* apptoken*
+Ex:
+
+    > pushover "Server daily backup complete"
+	> pushover "Download complete." "Deluge" custom_sound https://torboxpanel.com APP_TOKEN_HERE
+    
+If you're going to add an optional argument, all those before it must be provided. Adding a space in quotes will do (" ")
+Ex:
+
+    > pushover "Download complete." "Deluge" " " " " APP_TOKEN_HERE
+
