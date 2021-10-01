@@ -17,7 +17,7 @@ Examples:
     > pushover "Server daily backup complete"
 	> pushover "Download complete." "Deluge" custom_sound https://torboxpanel.com APP_TOKEN_HERE
     
-If you're going to add an optional argument, all those before it must be provided. Adding a space in quotes will do (" ")
+When adding an optional argument, all those before it must be provided. Adding a space in quotes will do (" ")
 
 Example:
 
