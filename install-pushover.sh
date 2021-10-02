@@ -9,6 +9,8 @@ fi
 touch /usr/bin/pushover
 chmod +x /usr/bin/pushover
 
+#update with new methode used in init
+
 echo "#! /bin/bash" >> /usr/bin/pushover
 echo "#Pushover script by RamboRigs" >> /usr/bin/pushover
 echo "MESSAGE=\$1" >> /usr/bin/pushover
