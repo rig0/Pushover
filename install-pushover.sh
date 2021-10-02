@@ -7,11 +7,11 @@ if [ $# -lt 5 ]; then
 fi
 
 BASEDIR=$(dirname "$0")
-sed -i -e "s/USER_TOKEN=/USER_TOKEN=\"$2\"/g" $BASEDIR/pushover.sh
-sed -i -e "s/DEFAULT_APP=/DEFAULT_APP=\"$3\"/g" $BASEDIR/pushover.sh
-sed -i -e "s/DEFAULT_SOUND=/DEFAULT_SOUND=\"$4\"/g" $BASEDIR/pushover.sh
-sed -i -e "s/DEFAULT_URL=/DEFAULT_URL=\"$5\"/g" $BASEDIR/pushover.sh
-sed -i -e "s/DEFAULT_TITLE=/DEFAULT_TITLE=\"$1\"/g" $BASEDIR/pushover.sh
+sed -i "s/USER_TOKEN=/USER_TOKEN=\"$2\"/g" $BASEDIR/pushover.sh
+sed -i "s/DEFAULT_APP=/DEFAULT_APP=\"$3\"/g" $BASEDIR/pushover.sh
+sed -i "s/DEFAULT_SOUND=/DEFAULT_SOUND=\"$4\"/g" $BASEDIR/pushover.sh
+sed -i "s/DEFAULT_URL=/DEFAULT_URL=\"$5\"/g" $BASEDIR/pushover.sh
+sed -i "s/DEFAULT_TITLE=/DEFAULT_TITLE=\"$1\"/g" $BASEDIR/pushover.sh
 
 #mv $BASEDIR/pushover.sh /usr/bin/pushover
 #chmod +x /usr/bin/pushover
