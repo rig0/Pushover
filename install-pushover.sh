@@ -15,3 +15,5 @@ sed -i "s/DEFAULT_TITLE=/DEFAULT_TITLE=\"$1\"/g" $BASEDIR/pushover.sh
 
 mv $BASEDIR/pushover.sh /usr/bin/pushover
 chmod +x /usr/bin/pushover
+
+pushover "Pushover Successfully Installed :)"
