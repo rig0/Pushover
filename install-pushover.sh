@@ -1,7 +1,7 @@
 #! /bin/bash
 #Pushover installation script by RamboRigs
 
-if [ $# -eq 0 ]; then
+if [ $# -lt 5 ]; then
   echo "Usage: install-pushover.sh servername userkey appkey sound url"
   exit
 fi
@@ -13,5 +13,5 @@ sed -i -e "s/DEFAULT_SOUND= /DEFAULT_SOUND=\"$4\" /g" $BASEDIR/pushover.sh
 sed -i -e "s/DEFAULT_URL= /DEFAULT_URL=\"$5\" /g" $BASEDIR/pushover.sh
 sed -i -e "s/DEFAULT_TITLE= /DEFAULT_TITLE=\"$1\" /g" $BASEDIR/pushover.sh
 
-mv $BASEDIR/pushover.sh /usr/bin/pushover
-chmod +x /usr/bin/pushover
+#mv $BASEDIR/pushover.sh /usr/bin/pushover
+#chmod +x /usr/bin/pushover
