@@ -6,50 +6,12 @@ if [ $# -eq 0 ]; then
   exit
 fi
 
-#touch /usr/bin/pushover
-#chmod +x /usr/bin/pushover
 BASEDIR=$(dirname "$0")
-#update with new methode used in init
 sed -i -e "s/USER_TOKEN= /USER_TOKEN=\"$2\" /g" $BASEDIR/pushover.sh
 sed -i -e "s/DEFAULT_APP= /DEFAULT_APP=\"$3\" /g" $BASEDIR/pushover.sh
 sed -i -e "s/DEFAULT_SOUND= /DEFAULT_SOUND=\"$4\" /g" $BASEDIR/pushover.sh
-sed -i -e "s/DEFAULT_URL= /DEFAULT_URL=$5 /g" $BASEDIR/pushover.sh
+sed -i -e "s/DEFAULT_URL= /DEFAULT_URL=\"$5\" /g" $BASEDIR/pushover.sh
 sed -i -e "s/DEFAULT_TITLE= /DEFAULT_TITLE=\"$1\" /g" $BASEDIR/pushover.sh
 
-#echo "#! /bin/bash" >> /usr/bin/pushover
-#echo "#Pushover script by RamboRigs" >> /usr/bin/pushover
-#echo "MESSAGE=\$1" >> /usr/bin/pushover
-#echo "TITLE=\$2" >> /usr/bin/pushover
-#echo "SOUND=\$3" >> /usr/bin/pushover
-#echo "APP_URL=\$4" >> /usr/bin/pushover
-#echo "APP_TOKEN=\$5" >> /usr/bin/pushover
-#echo "USER_TOKEN=\"$2\"" >> /usr/bin/pushover
-#echo "DEFAULT_APP=\"$3\"" >> /usr/bin/pushover
-#echo "DEFAULT_SOUND=\"$4\"" >> /usr/bin/pushover
-#echo "DEFAULT_URL=\"$5\"" >> /usr/bin/pushover
-#echo "" >> /usr/bin/pushover
-#echo "if [ \$# -eq 0 ]; then" >> /usr/bin/pushover
-#echo "  echo \"Usage: ./pushover message title* sound* url* apptoken*\"" >> /usr/bin/pushover
-#echo "  echo \"*=Optional\"" >> /usr/bin/pushover
-#echo "  exit" >> /usr/bin/pushover
-#echo "fi" >> /usr/bin/pushover
-#echo "if [ \$# -lt 2 ]; then" >> /usr/bin/pushover
-#echo "  TITLE=\"$1\"" >> /usr/bin/pushover
-#echo "  SOUND=\$DEFAULT_SOUND" >> /usr/bin/pushover
-#echo "  APP_URL=\$DEFAULT_URL" >> /usr/bin/pushover
-#echo "  APP_TOKEN=\$DEFAULT_APP" >> /usr/bin/pushover
-#echo "fi" >> /usr/bin/pushover
-#echo "if [ \$# -lt 3 ]; then" >> /usr/bin/pushover
-#echo "  SOUND=\$DEFAULT_SOUND" >> /usr/bin/pushover
-#echo "  APP_URL=\$DEFAULT_URL" >> /usr/bin/pushover
-#echo "  APP_TOKEN=\$DEFAULT_APP" >> /usr/bin/pushover
-#echo "fi" >> /usr/bin/pushover
-#echo "if [ \$# -lt 4 ]; then" >> /usr/bin/pushover
-#echo "  APP_URL=\$DEFAULT_URL" >> /usr/bin/pushover
-#echo "  APP_TOKEN=\$DEFAULT_APP" >> /usr/bin/pushover
-#echo "fi" >> /usr/bin/pushover
-#echo "if [ \$# -lt 5 ]; then" >> /usr/bin/pushover
-#echo "  APP_TOKEN=\$DEFAULT_APP" >> /usr/bin/pushover
-#echo "fi" >> /usr/bin/pushover
-#echo "" >> /usr/bin/pushover
-#echo "wget https://api.pushover.net/1/messages.json --post-data=\"token=\$APP_TOKEN&user=\$USER_TOKEN&message=\$MESSAGE&title=\$TITLE&sound=\$SOUND&url=\$APP_URL\" -qO- > /dev/null 2>&1 &" >> /usr/bin/pushover
+mv $BASEDIR/pushover.sh /usr/bin/pushover
+chmod +x /usr/bin/pushover
