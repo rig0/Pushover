@@ -11,9 +11,9 @@ APP_TOKEN=$5
 #FILL IN THE DEFAULT VALUES BELOW:
 USER_TOKEN=
 DEFAULT_APP=
-DEFAULT_SOUND= 
-DEFAULT_URL= 
-DEFAULT_TITLE= 
+DEFAULT_SOUND=
+DEFAULT_URL=
+DEFAULT_TITLE=
 
 if [ $# -eq 0 ]; then
     echo "Usage: ./pushover message title* sound* url* apptoken*"
