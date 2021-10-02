@@ -10,11 +10,11 @@ fi
 #chmod +x /usr/bin/pushover
 
 #update with new methode used in init
-sed -i -e "s/USER_TOKEN=/USER_TOKEN=\"$2\"/g" ./pushover.sh
-sed -i -e "s/DEFAULT_APP=/DEFAULT_APP=\"$3\"/g" ./pushover.sh
-sed -i -e "s/DEFAULT_SOUND=/DEFAULT_SOUND=\"$4\"/g" ./pushover.sh
-sed -i -e "s/DEFAULT_URL=/DEFAULT_URL=\"$5\"/g" ./pushover.sh
-sed -i -e "s/DEFAULT_TITLE=/DEFAULT_TITLE=\"$1\"/g" ./pushover.sh
+sed -i -e "s/USER_TOKEN=/USER_TOKEN=\"$2\"/g" ./Pushover/pushover.sh
+sed -i -e "s/DEFAULT_APP=/DEFAULT_APP=\"$3\"/g" ./Pushover/pushover.sh
+sed -i -e "s/DEFAULT_SOUND=/DEFAULT_SOUND=\"$4\"/g" ./Pushover/pushover.sh
+sed -i -e "s/DEFAULT_URL=/DEFAULT_URL=\"$5\"/g" ./Pushover/pushover.sh
+sed -i -e "s/DEFAULT_TITLE=/DEFAULT_TITLE=\"$1\"/g" ./Pushover/pushover.sh
 
 #echo "#! /bin/bash" >> /usr/bin/pushover
 #echo "#Pushover script by RamboRigs" >> /usr/bin/pushover
