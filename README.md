@@ -6,7 +6,7 @@ Bash script for pushover notifications.
 
 Use `install-pushover.sh` for a clean installation. Enter the default values below. (* = Optional):
 
-	> ./install-pushover.sh "apptitle" userkey appkey sound* url*
+	> sudo ./install-pushover.sh "apptitle" userkey appkey sound* url*
 
 Now you can can call `pushover` from anywhere. (* = Optional arguments that override defaults)
 
