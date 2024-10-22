@@ -2,41 +2,30 @@
 # Pushover script by RamboRigs
 # Usage: ./pushover message title* sound* url* apptoken*
 
+# Fill in the defaults manually or with install script
 MESSAGE=$1
-TITLE=$2
-SOUND=$3
-APP_URL=$4
-APP_TOKEN=$5
-
-#FILL IN THE DEFAULT VALUES BELOW:
 USER_TOKEN=
 DEFAULT_APP=
 DEFAULT_SOUND=
 DEFAULT_URL=
 DEFAULT_TITLE=
 
-if [ $# -eq 0 ]; then
+TITLE=${2:-$DEFAULT_TITLE}
+SOUND=${3:-$DEFAULT_SOUND}
+APP_URL=${4:-$DEFAULT_URL}
+APP_TOKEN=${5:-$DEFAULT_APP}
+
+if [ -z "$MESSAGE" ]; then
     echo "Usage: ./pushover message title* sound* url* apptoken*"
-	echo "*=Optional"
-    exit
-fi
-if [ $# -lt 2 ]; then
-	TITLE=$DEFAULT_TITLE
-	SOUND=$DEFAULT_SOUND
-	APP_URL=$DEFAULT_URL
-	APP_TOKEN=$DEFAULT_APP
-fi
-if [ $# -lt 3 ]; then
-	SOUND=$DEFAULT_SOUND
-	APP_URL=$DEFAULT_URL
-	APP_TOKEN=$DEFAULT_APP
-fi
-if [ $# -lt 4 ]; then
-	APP_URL=$DEFAULT_URL
-	APP_TOKEN=$DEFAULT_APP
-fi
-if [ $# -lt 5 ]; then
-	APP_TOKEN=$DEFAULT_APP
+    echo "*=Optional"
+    exit 1
 fi
 
-wget https://api.pushover.net/1/messages.json --post-data="token=$APP_TOKEN&user=$USER_TOKEN&message=$MESSAGE&title=$TITLE&sound=$SOUND&url=$APP_URL" -qO- > /dev/null 2>&1 &
+curl -s \
+  --form-string "token=$APP_TOKEN" \
+  --form-string "user=$USER_TOKEN" \
+  --form-string "message=$MESSAGE" \
+  --form-string "title=$TITLE" \
+  --form-string "sound=$SOUND" \
+  --form-string "url=$APP_URL" \
+  https://api.pushover.net/1/messages.json > /dev/null &
