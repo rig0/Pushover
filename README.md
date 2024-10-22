@@ -12,7 +12,8 @@ cd Pushover
 ```bash
 chmod +x ./install-pushover.sh && sudo ./install-pushover.sh "apptitle" userkey appkey sound* url*
 ```
-### Now you can can call `pushover` from anywhere. (* = Optional arguments that override defaults)
+### Now you can can call `pushover` from anywhere. 
+*\* = Optional arguments that override defaults*
 ```bash
 pushover "message" "title"* sound* url* apptoken*
 ```
